@@ -7,7 +7,7 @@ function App() {
   const [age, setAge] = useState();
   const [month, setMonth] = useState();
 
-  if (process.env.NODE_ENV !== "production")
+  if (process.env.NODE_ENV === "development")
     return (
       <div>
         <h4>Date:</h4>
@@ -18,6 +18,7 @@ function App() {
         <button onClick={() => setAge(getAge(date))}>Calculate</button>
       </div>
     );
+  if (process.env.NODE_ENV === "production")
   return (
     <div>
       <h4>Date:</h4>
